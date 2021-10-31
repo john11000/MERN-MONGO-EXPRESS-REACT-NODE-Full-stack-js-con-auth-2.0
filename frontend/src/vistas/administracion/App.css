@@ -1,0 +1,128 @@
+
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+}
+
+.titulo {
+  font-size: calc(10px + 1vmin);
+}
+/* App{
+  background-color: cornflowerblue;
+  
+  
+} */
+
+.mgsBox{
+  z-index: 11;
+  animation-name: mostrar;
+  animation-duration: 2s;
+  opacity: 1;
+
+
+  
+}
+.msg-p{
+  position: absolute;
+   min-height: 300px;
+   
+ 
+}
+
+
+/* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+::-webkit-scrollbar-thumb {
+  background: black;
+
+  border-radius: 4px;
+}
+
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+::-webkit-scrollbar-thumb:hover {
+  background: black;
+  box-shadow: 0 0 2px 1px rgba(204, 204, 204, 0.2);
+}
+
+/* Cambiamos el fondo cuando esté en active */
+::-webkit-scrollbar-thumb:active {
+  background-color: #999999;
+}
+
+/* Ponemos un color de fondo y redondeamos las esquinas del track */
+::-webkit-scrollbar-track {
+  background: #e1e1e1;
+  border-radius: 4px;
+}
+
+/* Cambiamos el fondo cuando esté en active o hover */
+::-webkit-scrollbar-track:hover,
+::-webkit-scrollbar-track:active {
+background: #d4d4d4;
+}
+
+::-webkit-scrollbar {
+  width: 8px;     /* Tamaño del scroll en vertical */
+  height: 8px;    /* Tamaño del scroll en horizontal */
+}
+.msg-box-alert{
+
+  height: 350px;
+  width: 100%;
+  background-color:#fff;
+  color: black;
+  text-align: center;
+  margin: auto;
+
+}
+
+
+
+
+
+
+.notificaciones{
+  position: absolute;
+  left: 35%;
+
+
+}
+
+.msg-t{
+  position: absolute; top: 0; right: 0;
+}
+.id_usuario {
+  position: absolute;
+  white-space: nowrap;
+ animation: rightThenLeft infinite 4s linear;
+}
+
+
+
+.contenedor_tp{
+  display: flex;
+  align-items: auto;
+  justify-content:unset;
+  border-collapse: separate;
+  border-spacing: 1000px 500px;
+}
+
+.contenedor_btn{
+  display: flex;
+  align-items:center;
+  justify-content:space-around;
+}
+
+@keyframes mostrar{
+  from {opacity: 0.2;}
+  to{opacity: 1;}
+
+}
+
+
+@keyframes rightThenLeft {
+  0%   {left: 0%;}
+  50%  {left: 100%;}
+  100% {left: 0%;}
+}

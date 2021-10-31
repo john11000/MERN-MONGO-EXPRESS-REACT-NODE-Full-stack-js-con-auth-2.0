@@ -1,0 +1,189 @@
+nav ul li {
+  float: left;
+  background-color: blanchedalmond;
+  border: solid rgb(0, 0, 0);
+  color: white;
+  list-style: none;
+  margin: 10px;
+  line-height: 30px;
+  cursor: pointer;
+  display: inline-block;
+}
+.clearfix {
+  clear: both;
+}
+
+.tas{
+  overflow: auto;
+}
+
+.animarEntradas {
+  animation: mostrar 2s ;
+}
+.mgsBox{
+  z-index: 11;
+
+  animation-name: mostrar;
+  animation-duration: 2s ;
+  opacity: 1;
+
+
+  
+}
+.msg-p{
+  position: absolute;
+   min-height: 300px;
+   
+ 
+}
+
+body { 
+	font-family: monospace; 
+}
+
+.contenedor_titulo {
+	margin: auto;
+	display: table;
+}
+
+h1 { 
+	position: relative; 
+	float: left;
+	color: #fff;
+	font-size: 2.5em;
+}
+
+h1 span {
+    position:absolute;
+    right:0;
+    width:0;
+    background:#212529;
+    border-left: 1px solid #000;
+    animation: escribir 5s steps(30) infinite alternate;
+}
+
+@keyframes escribir {
+    from { width: 100% }
+    to { width:0 }
+}
+
+
+
+.msg-box-alert{
+
+  height: 350px;
+  width: 100%;
+  background-color:#fff;
+  color: black;
+  text-align: center;
+  margin: auto;
+
+}
+
+
+
+
+
+
+.notificaciones{
+  position: absolute;
+  left: 35%;
+
+
+}
+
+.msg-t{
+  position: absolute; top: 0; right: 0;
+}
+
+
+.contenedor_tp{
+  display: flex;
+  align-items: auto;
+  justify-content:unset;
+  border-collapse: separate;
+  border-spacing: 1000px 500px;
+}
+
+.contenedor_btn{
+  display: flex;
+  align-items:center;
+  justify-content:space-around;
+}
+
+
+
+#tabla {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border-collapse: collapse;
+  border: solid;
+  width: 100%;
+}
+#tabla td,
+#tabla th {
+  border: 1px solid rgb(0, 0, 0);
+  padding: 8px;
+}
+#tabla th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #5f6361;
+  color: white;
+}
+
+.herramientas {
+  float: right;
+  min-height: 160px;
+  padding: 30px;
+  margin: 0px 10px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px white;
+  background-color: rgb(0, 0, 0);
+}
+
+.buscar {
+  padding: 5px;
+  width: 200px;
+}
+
+.boton-buscar {
+  height: 30px;
+  width: 80px;
+}
+
+.boton {
+  background-color: #5f6361;
+  border: solid rgb(0, 0, 0);
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 50px 1px;
+  cursor: pointer;
+}
+
+.boton-central {
+  height: 30px;
+  width: 150px;
+  margin: 20px;
+}
+.tablas {
+  width: 300px;
+}
+footer {
+  background: black;
+  color: white;
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+}
+
+@keyframes mostrar{
+  from {opacity: 0.2;}
+  to{opacity: 1;}
+
+}

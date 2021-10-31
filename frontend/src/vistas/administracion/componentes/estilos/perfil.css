@@ -1,0 +1,23 @@
+.user_img{
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+
+.perfil{
+    background-color: black;
+    color: white;
+    justify-content:center;
+    text-align: center;
+    padding: 10px;
+    
+}
+
+.user{
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    
+}
