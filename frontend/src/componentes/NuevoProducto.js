@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { baseUrl } from "src/servivios";
 
 export default function NuevoProducto({GetProductos, setProductsData}) {
-  
+
   const [nombre, setNombre]= useState()
   const [descripcion, setDescripcion]= useState()
   const [valorUnitario, setValorUnitario]= useState()
@@ -36,7 +37,7 @@ export default function NuevoProducto({GetProductos, setProductsData}) {
     console.log(estado)
     
 
-    const url = "https://b-mintic.herokuapp.com/productos";
+    const url = baseUrl() + "/productos";
 
     const fetchData = async () => {
       try {

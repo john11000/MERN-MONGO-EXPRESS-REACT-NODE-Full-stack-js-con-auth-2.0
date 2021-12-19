@@ -1,7 +1,7 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import Header from "src/componentes/header/Header";
-import { PutUsuarios } from "src/servivios";
+import { baseUrl, PutUsuarios } from "src/servivios";
 Date.prototype.timeNow = function () {
   return ((this.getHours() < 10)?"0":"") + this.getHours() +":"+ ((this.getMinutes() < 10)?"0":"") + this.getMinutes() +":"+ ((this.getSeconds() < 10)?"0":"") + this.getSeconds();
 }
@@ -142,7 +142,7 @@ function Administracion() {
   };
 
   useEffect(() => {
-    const url = "https://b-mintic.herokuapp.com/administracion/obtener";
+    const url = baseUrl() + "/administracion/obtener";
 
     const fetchData = async () => {
       try {

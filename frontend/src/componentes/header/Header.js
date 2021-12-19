@@ -15,15 +15,17 @@ export default function Header() {
     window.location.reload();
   }
 
-  useEffect( async() => {
+  useEffect(() => {
+    (async()=>{
       const userdata = await GetuserData();
-      console.log(userdata.data);
+      console.log(userdata)
       setDataUsuario(userdata.data.respuesta);
-      if(window.location.pathname=="/Administration" && userdata.data.respuesta.roles.toLowerCase()!=="Admin".toLocaleLowerCase()){
+      if(window.location.pathname === "/Administration" && userdata.data.respuesta.roles.toLowerCase()!=="Admin".toLocaleLowerCase()){
         window.location.href="/Carrito"
         alert("forbidden")
-
       }
+    })()
+     
  
    
   }, []);
@@ -39,7 +41,7 @@ export default function Header() {
           />
         </div>
         <div className="col-4 col-md-6 text-center contenedor_titulo">
-          <h1 className="h4 text-center ">CALZADO MINTIC<span>&#160;</span></h1>
+          <h1 className="h4 text-center text-uppercase ">CALZADO Jhon anderson<span>&#160;</span></h1>
         </div>
         <div className="d-flex align-items-center justify-content-end col-4">
           <form className="w-50 me-2 align-items-center">
@@ -61,7 +63,7 @@ export default function Header() {
             >
 
               <img
-                src={dataUsuario.fotoUrl} onError={(e)=>{e.target.onerror = null; e.target.src="https://cdn-0.emojis.wiki/emoji-pics/apple/pensive-face-apple.png"}}
+                src={dataUsuario.fotoUrl == null ? "https://e7.pngegg.com/pngimages/453/521/png-clipart-bearded-emoji-roblox-emoticon-smiley-face-thumbnail-awesome-face-background-miscellaneous-face.png" : dataUsuario.fotoUrl } 
                 alt="mdo"
                 width="35"
                 height="35"
@@ -84,7 +86,7 @@ export default function Header() {
             <li>
               <hr className="dropdown-divider" />
             </li>
-            {dataUsuario.roles =="admin"
+            {dataUsuario.roles === "admin" || dataUsuario.roles === "Admin" 
         ?     <Link className="dropdown-item" to="/Administration">
         Administración
       </Link>

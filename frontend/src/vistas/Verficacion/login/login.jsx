@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { baseUrl } from "src/servivios";
 import loginImg from "../login.svg";
 
 if (localStorage.getItem("session")) {
@@ -11,8 +12,8 @@ export class Login extends React.Component {
       correo: "",
       contraseña: "",
       respuesta: "",
-      msgData : "",
-      msg :false
+      msgData: "",
+      msg: false,
     };
     this.loguear = this.loguear.bind(this);
     this.changeCorreo = this.changeCorreo.bind(this);
@@ -26,35 +27,33 @@ export class Login extends React.Component {
     this.setState({ contraseña: e.target.value });
   }
 
-  renderMsg(){
-    if(this.state.msg){
-      
+  renderMsg() {
+    if (this.state.msg) {
     }
   }
 
   loguear(e) {
     e.preventDefault();
     var yHeaders = new Headers();
-    yHeaders.append("Content-Type", "application/json")
+    yHeaders.append("Content-Type", "application/json");
 
-    fetch("https://b-mintic.herokuapp.com/validate/user", {
+    fetch(baseUrl() + "/validate/user", {
       method: "POST",
       body: JSON.stringify({
         email: this.state.correo,
         contraseña: this.state.contraseña,
       }),
-      headers:yHeaders,
+      headers: yHeaders,
     })
       .then((res) => res.json())
       .catch((error) => console.error("Error:", error))
       .then((response) => {
-        if (response.estado != 0) {
+        if (response.estado !== 0) {
           localStorage.setItem("session", response.respuesta);
           window.location.reload();
         } else {
-    this.setState({ msgData:response.respuesta });
-    this.setState({ msg:true });
-
+          this.setState({ msgData: response.respuesta ? response.respuesta : "usuario o contraseña incorrectos" });
+          this.setState({ msg: true });
         }
       });
   }
@@ -100,17 +99,14 @@ export class Login extends React.Component {
             </div>
           </div>
         </div>
-     
-            {this.state.msg && (
-                 <div
-                 className="alert alert-danger  "
-               >
-          <strong>Error : </strong>{this.state.msgData}
+
+        {this.state.msg && (
+          <div className="alert alert-danger mt-3">
+            <strong>Error : </strong>
+            {this.state.msgData}
           </div>
-              
-            )}
-        
- 
+        )}
+
         <div className="footer"></div>
       </form>
     );

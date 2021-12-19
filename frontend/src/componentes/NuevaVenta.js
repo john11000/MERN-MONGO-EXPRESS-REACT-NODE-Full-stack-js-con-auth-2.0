@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { baseUrl } from "src/servivios";
+
 
 export default function NuevaVenta({
   PostVentas,
@@ -71,7 +73,7 @@ export default function NuevaVenta({
    e.preventDefault()
     const fechaActual = Date.now();
 
-    const url = "https://b-mintic.herokuapp.com/ventas";
+    const url = baseUrl() + "/ventas";
 
     const fetchData = async () => {
       if(ProductosSelecionados.length ===0){
